@@ -1,0 +1,7 @@
+<ng-container *ngIf="state$ | async as state">
+  <info [language]="state.language"></info>
+  <experience [language]="state.language"></experience>
+  <education [language]="state.language"></education>
+  <skills></skills>
+  <languages></languages>
+</ng-container>

@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  min-height: 0;
+  min-width: 0;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+}
+
+@for $i from 1 through 10 {
+  [class*="gap#{$i * 25}"] {
+    gap: #{$i * 0.25}rem, 0;
+  }
+  [class*="flex#{$i}"] {
+    flex: $i;
+  }
+}
+
+[class*="flex"] {
+  display: flex;
+}
+
+[class*="row"] {
+  flex-direction: row;
+}
+
+[class*="column"] {
+  flex-direction: column;
+}
+
+[class*="centered"] {
+  justify-content: center;
+  align-items: center;
+}
+
+[class*="justified"] {
+  justify-content: center;
+}
+
+[class*="aligned"] {
+  align-items: center;
+}
+
+[class*="spaced"] {
+  justify-content: space-between;
+}

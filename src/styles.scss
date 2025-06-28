@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 0;
+  min-width: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@for $i from 0 through 10 {
+  [class*="pad#{$i * 25}"] {
+    padding: #{$i * 0.25}rem;
+  }
+  [class*="padx#{$i * 25}"] {
+    padding: 0, #{$i * 0.25}rem;
+  }
+  [class*="pady#{$i * 25}"] {
+    padding: #{$i * 0.25}rem, 0;
+  }
+  [class*="mar#{$i * 25}"] {
+    margin: #{$i * 0.25}rem;
+  }
+  [class*="marx#{$i * 25}"] {
+    margin: 0, #{$i * 0.25}rem;
+  }
+  [class*="mary#{$i * 25}"] {
+    margin: #{$i * 0.25}rem, 0;
+  }
+
+  [class*="top#{$i}"] {
+    top: #{$i}rem;
+  }
+  [class*="left#{$i}"] {
+    left: #{$i}rem;
+  }
+  [class*="right#{$i}"] {
+    right: #{$i}rem;
+  }
+  [class*="bottom#{$i}"] {
+    bottom: #{$i}rem;
+  }
+}
+
+[class*="relative"] {
+  position: relative;
+}
+
+[class*="absolute"] {
+  position: absolute;
+}
+
+@import url(./flex.scss);
