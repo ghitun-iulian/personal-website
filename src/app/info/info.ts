@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './info.html',
   styleUrl: './info.scss',
+  host: { class: 'flex-column' },
 })
 export class Info {
   @Input() set language(language: string) {

@@ -1,0 +1,20 @@
+:host {
+  width: 210mm;
+  min-height: 297mm;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  background-color: var(--bg);
+
+  main {
+    padding-left: 16mm;
+    padding-top: 8mm;
+  }
+
+  .line {
+    position: absolute;
+    left: 8mm;
+    top: 10mm;
+    bottom: 10mm;
+    width: 1mm;
+    background-color: var(--complementary);
+  }
+}

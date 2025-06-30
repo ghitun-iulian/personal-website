@@ -1,0 +1,39 @@
+:host {
+  width: 80mm;
+  .profile-pic {
+    max-width: 100%;
+  }
+
+  .about {
+    background: linear-gradient(0, var(--complementary), var(--primary));
+
+    h1,
+    h2 {
+      font-family: axis;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2;
+    }
+
+    p {
+      color: whitesmoke;
+      font-family: sans-serif;
+    }
+
+    .contact {
+      color: whitesmoke;
+      padding-left: 2rem;
+      font-family: sans-serif;
+      cursor: pointer;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

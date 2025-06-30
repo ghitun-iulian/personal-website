@@ -14,6 +14,7 @@ import { CvState } from './cv.interface';
   imports: [CommonModule, Info, Experience, Education, Skills, Languages],
   templateUrl: './cv.html',
   styleUrl: './cv.scss',
+  host: { class: 'flex-column-flex1' },
 })
 export class Cv {
   private route = inject(ActivatedRoute);

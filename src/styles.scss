@@ -19,19 +19,19 @@ body {
     padding: #{$i * 0.25}rem;
   }
   [class*="padx#{$i * 25}"] {
-    padding: 0, #{$i * 0.25}rem;
+    padding: 0 #{$i * 0.25}rem;
   }
   [class*="pady#{$i * 25}"] {
-    padding: #{$i * 0.25}rem, 0;
+    padding: #{$i * 0.25}rem 0;
   }
   [class*="mar#{$i * 25}"] {
     margin: #{$i * 0.25}rem;
   }
   [class*="marx#{$i * 25}"] {
-    margin: 0, #{$i * 0.25}rem;
+    margin: 0 #{$i * 0.25}rem;
   }
   [class*="mary#{$i * 25}"] {
-    margin: #{$i * 0.25}rem, 0;
+    margin: #{$i * 0.25}rem 0;
   }
 
   [class*="top#{$i}"] {
@@ -56,4 +56,17 @@ body {
   position: absolute;
 }
 
+[class*="icon"] {
+  font-family: Material Icons;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+button.icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 @import url(./flex.scss);
+@import url(./theme.scss);

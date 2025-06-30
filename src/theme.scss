@@ -1,0 +1,50 @@
+:root {
+  --primary: #581039;
+  --complementary: #5a5b8d;
+  --accent: navy;
+  --bg: #faeddb;
+}
+
+@font-face {
+  font-family: "axis";
+  src: url(./assets/Axis\ Extrabold.otf);
+}
+
+.section-title {
+  font-family: axis;
+  font-size: 2rem;
+  color: var(--primary);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 8mm;
+    aspect-ratio: 1;
+    background-color: var(--bg);
+    border: 1.5mm solid var(--primary);
+    border-radius: 50%;
+    top: 50%;
+    translate: 0 -50%;
+    left: -11.5mm;
+  }
+}
+
+.section-point {
+  font-family: axis;
+  font-size: 1.2rem;
+  color: var(--primary);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 5mm;
+    aspect-ratio: 1;
+    background-color: var(--primary);
+    border-radius: 50%;
+    top: 50%;
+    translate: 0 -50%;
+    left: -10mm;
+  }
+}

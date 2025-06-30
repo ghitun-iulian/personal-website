@@ -15,9 +15,9 @@ body {
   flex: 1;
 }
 
-@for $i from 1 through 10 {
+@for $i from 0 through 10 {
   [class*="gap#{$i * 25}"] {
-    gap: #{$i * 0.25}rem, 0;
+    gap: #{$i * 0.25}rem;
   }
   [class*="flex#{$i}"] {
     flex: $i;
@@ -51,4 +51,9 @@ body {
 
 [class*="spaced"] {
   justify-content: space-between;
+}
+
+.test {
+  background-color: orange;
+  border: 2px solid red;
 }
