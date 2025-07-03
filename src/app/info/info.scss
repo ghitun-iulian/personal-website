@@ -26,13 +26,26 @@
       font-family: sans-serif;
     }
 
+    .birth {
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
     .contact {
       color: whitesmoke;
-      padding-left: 2rem;
+      padding-left: 1rem;
       font-family: sans-serif;
       cursor: pointer;
+      text-decoration: none;
+
+      img {
+        width: 2rem;
+        aspect-ratio: 1;
+      }
+
       &:hover {
-        color: white;
+        text-decoration: underline;
       }
     }
   }

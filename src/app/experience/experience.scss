@@ -1,0 +1,37 @@
+:host {
+  .position {
+    font-family: axis;
+    color: var(--complementary);
+    font-size: 1.3rem;
+  }
+
+  .company {
+    font-family: axis;
+    color: rgb(158, 71, 71);
+    font-size: 1.1rem;
+  }
+
+  .location {
+    font-family: sans-serif;
+    color: rgb(158, 71, 71);
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-family: sans-serif;
+    color: rgb(158, 71, 71);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    li {
+      font-family: sans-serif;
+      margin-left: 1rem;
+      color: rgb(158, 71, 71);
+    }
+  }
+}

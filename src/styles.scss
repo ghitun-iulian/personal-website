@@ -68,5 +68,15 @@ button.icon {
   cursor: pointer;
 }
 
+.show-on-print {
+  display: none;
+}
+
 @import url(./flex.scss);
 @import url(./theme.scss);
+
+@media print {
+  .hide-on-print {
+    display: none;
+  }
+}

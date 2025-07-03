@@ -1,2 +1,20 @@
-<div class="section-title">Experience</div>
-<div class="section-point">2014 - 2022</div>
+<ng-container *ngIf="data$ | async as data">
+  <div class="section-title">
+    {{data.language == 'ro' ? 'Experienta de lucru' : 'Work experience'}}
+  </div>
+
+  <div class="flex-column gap100">
+    <div *ngFor="let e of data.workExperiences ">
+      <div class="section-point">{{e.period}}</div>
+      <div class="position">{{e.position}}</div>
+      <div class="flex-gap50-aligned">
+        <span class="company">{{e.company}}</span>
+        <div class="location">{{e.location}}</div>
+      </div>
+      <p class="description">{{e.description}}</p>
+      <ul>
+        <li *ngFor="let s of e.skills">{{s}}</li>
+      </ul>
+    </div>
+  </div>
+</ng-container>

@@ -1,35 +1,25 @@
-<img class="profile-pic" src="assets/profile-pic.png" alt="" />
-<div class="about flex-column-flex1">
-  <h1 class="pad100">Ghitun Iulian</h1>
-  <h2 class="pad200">About</h2>
-  <p class="padx200">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus earum ducimus
-    quisquam, sunt sint dolorum aperiam mollitia voluptatem, quos recusandae
-    eligendi, illum amet similique aut.
-  </p>
+<ng-container *ngIf="data$ | async as data">
+  <img class="profile-pic" src="assets/profile-pic.png" alt="" />
+  <div class="about flex-column-flex1">
+    <h1 class="pad100">{{data.info.name}}</h1>
+    <span class="birth">Romania - 1993</span>
+    <h2 class="pad100 mary100">
+      {{ data.language == "ro" ? "Despre" : "About"}}
+    </h2>
+    <p class="padx200">{{data.info.about}}</p>
 
-  <h2 class="pad200">Contact</h2>
+    <h2 class="pad100 mary100">Contact</h2>
 
-  <div class="contact-entries flex-column-gap100">
-    <div class="contact flex-aligned gap50">
-      <span class="icon">home</span>
-      <span>linkedin.com</span>
-    </div>
-    <div class="contact flex-aligned gap50">
-      <span class="icon">home</span>
-      <span>linkedin.com</span>
-    </div>
-    <div class="contact flex-aligned gap50">
-      <span class="icon">home</span>
-      <span>linkedin.com</span>
-    </div>
-    <div class="contact flex-aligned gap50">
-      <span class="icon">home</span>
-      <span>linkedin.com</span>
-    </div>
-    <div class="contact flex-aligned gap50">
-      <span class="icon">home</span>
-      <span>linkedin.com</span>
+    <div class="contact-entries flex-column-gap100">
+      <a
+        [href]="l.link"
+        target="{{l.type !== 'phone' ? '_blank' : ''}}"
+        class="contact flex-aligned gap50"
+        *ngFor="let l of data.links"
+      >
+        <img src="{{'assets/' + l.icon}}" />
+        <span>{{l.label}}</span>
+      </a>
     </div>
   </div>
-</div>
+</ng-container>

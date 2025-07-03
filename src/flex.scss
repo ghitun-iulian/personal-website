@@ -53,6 +53,10 @@ body {
   justify-content: space-between;
 }
 
+[class*="noshrink"] {
+  flex-shrink: 0;
+}
+
 .test {
   background-color: orange;
   border: 2px solid red;

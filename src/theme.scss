@@ -1,8 +1,8 @@
 :root {
   --primary: #581039;
-  --complementary: #5a5b8d;
+  --complementary: #4a4b79;
   --accent: navy;
-  --bg: #faeddb;
+  --bg: #f5eee5;
 }
 
 @font-face {
@@ -12,9 +12,11 @@
 
 .section-title {
   font-family: axis;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primary);
   position: relative;
+  margin-bottom: 0.5rem;
+  // border-bottom: 1mm solid var(--complementary);
 
   &::before {
     content: "";
@@ -33,7 +35,7 @@
 .section-point {
   font-family: axis;
   font-size: 1.2rem;
-  color: var(--primary);
+  color: var(--complementary);
   position: relative;
 
   &::before {
@@ -41,7 +43,7 @@
     position: absolute;
     height: 5mm;
     aspect-ratio: 1;
-    background-color: var(--primary);
+    background-color: var(--complementary);
     border-radius: 50%;
     top: 50%;
     translate: 0 -50%;
