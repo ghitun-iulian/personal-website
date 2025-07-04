@@ -7,10 +7,7 @@
     <div *ngFor="let e of data.workExperiences ">
       <div class="section-point">{{e.period}}</div>
       <div class="position">{{e.position}}</div>
-      <div class="flex-gap50-aligned">
-        <span class="company">{{e.company}}</span>
-        <div class="location">{{e.location}}</div>
-      </div>
+      <span class="company">{{e.company}}</span>
       <p class="description">{{e.description}}</p>
       <ul>
         <li *ngFor="let s of e.skills">{{s}}</li>

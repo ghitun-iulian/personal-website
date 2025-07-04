@@ -1,7 +1,8 @@
 :root {
   --primary: #581039;
   --complementary: #4a4b79;
-  --accent: navy;
+  --accent: rgb(247, 121, 18);
+  --text: rgb(61, 40, 40);
   --bg: #f5eee5;
 }
 
@@ -35,7 +36,7 @@
 .section-point {
   font-family: axis;
   font-size: 1.2rem;
-  color: var(--complementary);
+  color: var(--primary);
   position: relative;
 
   &::before {
@@ -43,7 +44,7 @@
     position: absolute;
     height: 5mm;
     aspect-ratio: 1;
-    background-color: var(--complementary);
+    background-color: var(--primary);
     border-radius: 50%;
     top: 50%;
     translate: 0 -50%;
