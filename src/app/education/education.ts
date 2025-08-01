@@ -11,8 +11,10 @@ import { BehaviorSubject } from 'rxjs';
 export class Education {
   data$ = new BehaviorSubject<{
     language: string;
+    education: any[]
   }>({
     language: 'en',
+    education: []
   });
 
   get data() {
@@ -25,6 +27,34 @@ export class Education {
 
   @Input() set language(language: string) {
     if (!language) return;
-    this.data = { language };
+    this.data = { 
+      language, 
+      education: this.education[language] 
+    };
   }
+
+
+  education_ro = [
+    {
+      period:'10.2014 - 04.2021',
+      title:'',
+      institution:'',
+      description: '',
+      link: '',
+    }
+  ]
+  education_en = [
+    {
+      period:'',
+      title:'',
+      institution:'',
+      description: '',
+      link: '',
+    }
+  ]
+  
+  education:any = {
+    ro: this.education_ro,
+    en: this.education_en
+  };
 }

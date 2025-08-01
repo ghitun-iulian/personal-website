@@ -1,51 +1,90 @@
 :host {
-  width: 80mm;
-  .profile-pic {
-    max-width: 100%;
+  gap: 2rem;
+  .profile-frame {
+    width: 100%;
+    aspect-ratio: 1;
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .profile-bg {
+      width: 80%;
+      aspect-ratio: 1;
+      background-color: var(--primary);
+      position: relative;
+      img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+  .name,
+  .details {
+    font-family: axis;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
-  .about {
-    background: linear-gradient(0, var(--complementary), var(--primary));
+  .details {
+    font-size: 1rem;
+  }
 
-    h1,
-    h2 {
-      font-family: axis;
-      color: white;
+  .download-cv-btn {
+    cursor: pointer;
+    border: 3px solid var(--accent);
+    background: none;
+    padding: 0.5rem;
+    color: var(--text);
+
+    &:hover {
+      border: 3px solid var(--text);
     }
 
-    h1 {
-      text-align: center;
+    &:active {
+      border: 3px solid var(--accent);
+      color: var(--accent);
     }
+  }
 
-    h2 {
-      font-size: 2;
-    }
-
-    p {
-      color: whitesmoke;
-      font-family: sans-serif;
-    }
-
-    .birth {
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-    }
-
-    .contact {
-      color: whitesmoke;
-      padding-left: 1rem;
-      font-family: sans-serif;
-      cursor: pointer;
+  ul li {
+    list-style: none;
+    a {
+      color: var(--text);
       text-decoration: none;
+      font-family: sans-serif;
+      font-size: 0.9rem;
 
-      img {
+      .svg {
         width: 2rem;
-        aspect-ratio: 1;
+        fill: var(--accent);
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        padding: 5px;
       }
 
       &:hover {
         text-decoration: underline;
+        .svg {
+          fill: var(--text);
+        }
+      }
+    }
+  }
+
+  .languages {
+    a {
+      font-family: axis;
+      text-decoration: none;
+      color: var(--primary);
+
+      &:not(.active):hover {
+        color: var(--accent);
+      }
+
+      &.active {
+        color: var(--text);
       }
     }
   }

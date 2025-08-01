@@ -1,9 +1,23 @@
 :root {
-  --primary: #581039;
-  --complementary: #4a4b79;
-  --accent: rgb(247, 121, 18);
-  --text: rgb(61, 40, 40);
-  --bg: #f5eee5;
+  // --primary: #723d46;
+  // --complementary: #472d30;
+  // --accent: #e26d5c;
+  // --text: #ffe1a8;
+
+  --bg: #16151a;
+  --primary: #424252;
+  --complementary: #6488ca;
+  --accent: #b9966d;
+  --text: #e6e2dc;
+
+  --border: 6px solid var(--accent);
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  line-height: 1.3em;
 }
 
 @font-face {
@@ -11,43 +25,12 @@
   src: url(./assets/Axis\ Extrabold.otf);
 }
 
-.section-title {
-  font-family: axis;
-  font-size: 1.5rem;
-  color: var(--primary);
-  position: relative;
-  margin-bottom: 0.5rem;
-  // border-bottom: 1mm solid var(--complementary);
-
-  &::before {
-    content: "";
-    position: absolute;
-    height: 8mm;
-    aspect-ratio: 1;
-    background-color: var(--bg);
-    border: 1.5mm solid var(--primary);
-    border-radius: 50%;
-    top: 50%;
-    translate: 0 -50%;
-    left: -11.5mm;
-  }
-}
-
-.section-point {
-  font-family: axis;
-  font-size: 1.2rem;
-  color: var(--primary);
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    height: 5mm;
-    aspect-ratio: 1;
-    background-color: var(--primary);
-    border-radius: 50%;
-    top: 50%;
-    translate: 0 -50%;
-    left: -10mm;
+.svg {
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 100%;
   }
 }

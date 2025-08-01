@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, inject } from '@angular/core';
+import { map } from 'rxjs';
+import { LanguageService } from '../services/language.service';
+import data_en from './info.data_en.json';
+import data_ro from './info.data_ro.json';
+import { SvgDirective } from '../directives/svg.directive';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface ContactLinks {
   icon: string;
@@ -11,74 +16,51 @@ interface ContactLinks {
 
 @Component({
   selector: 'info',
-  imports: [CommonModule],
+  imports: [CommonModule, SvgDirective, RouterLink, RouterLinkActive],
   templateUrl: './info.html',
   styleUrl: './info.scss',
   host: { class: 'flex-column' },
 })
 export class Info {
-  data$ = new BehaviorSubject<{
-    language: string;
-    info: { [key: string]: string };
-    links: ContactLinks[];
-  }>({
-    language: 'en',
-    info: {},
-    links: [],
-  });
+  private languageService = inject(LanguageService);
 
-  get data() {
-    return this.data$.value;
-  }
-
-  set data(x: any) {
-    this.data$.next({ ...this.data, ...x });
-  }
-
-  @Input() set language(language: string) {
-    if (!language) return;
-    this.data = {
-      language,
-      info: this.info[language],
-      links: this.contactList,
-    };
-  }
-
-  info: any = {
-    en: {
-      name: 'Iulian Ghitun',
-      about: 'English about',
-    },
-    ro: {
-      name: 'Ghitun Iulian',
-      about: 'Text in romana',
-    },
+  infoData: any = {
+    en: data_en,
+    ro: data_ro,
   };
+
+  data$ = this.languageService.language$.pipe(
+    map((l: string) => ({
+      language: l,
+      info: this.infoData[l],
+      contactList: this.contactList,
+    }))
+  );
 
   contactList: ContactLinks[] = [
     {
-      icon: 'email_logo.svg',
+      icon: 'mail',
       label: 'ghitun.iulian.bogdan@gmail.com',
       link: 'mailto:ghitun.iulian.bogdan@gmail.com',
       type: 'email',
     },
     {
-      icon: 'phone_logo.svg',
+      icon: 'phone',
       label: '+40 748 963 385',
       link: 'tel:+40748963385',
       type: 'phone',
     },
     {
-      icon: 'linkedin_logo.svg',
+      icon: 'linkedin',
       label: 'linkedin.com/in/ghitun-iulian',
       link: 'https://www.linkedin.com/in/ghitun-iulian',
       type: 'url',
     },
     {
-      icon: 'github_logo.svg',
-      label: 'github.com/qBogdan',
-      link: 'https://github.com/qBogdan',
-      type: 'email',
+      icon: 'github',
+      label: 'github.com/ghitun-iulian',
+      link: 'https://github.com/ghitun-iulian',
+      type: 'url',
     },
   ];
 }

@@ -1,13 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { Tools } from './tools/tools';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { tap } from 'rxjs';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Tools, RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss',
+  imports: [RouterOutlet],
+  host: { class: 'flex-column-flex1 gap100' },
+  template: `<router-outlet></router-outlet> `,
 })
 export class App {
   protected title = 'cv';

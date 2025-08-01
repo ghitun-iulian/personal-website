@@ -1,13 +1,22 @@
 import { Routes } from '@angular/router';
+import { LanguageGuard } from './language.guard';
 
-export const routes: Routes = [
+const languageChildren: Routes = [
   {
-    path: 'en',
+    path: '',
     loadComponent: () => import('./cv/cv').then((c) => c.Cv),
   },
   {
-    path: 'ro',
-    loadComponent: () => import('./cv/cv').then((c) => c.Cv),
+    path: '**',
+    redirectTo: '',
+  },
+];
+
+export const routes: Routes = [
+  {
+    path: ':lang',
+    canActivate: [LanguageGuard],
+    children: languageChildren,
   },
   {
     path: '**',

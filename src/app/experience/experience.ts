@@ -27,10 +27,9 @@ export class Experience {
 
   @Input() set language(language: string) {
     if (!language) return;
-    const workExperiences = this.workExperiences[language];
     this.data = {
       language,
-      workExperiences: workExperiences,
+      workExperiences: this.workExperiences[language],
     };
   }
 

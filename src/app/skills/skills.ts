@@ -11,8 +11,10 @@ import { BehaviorSubject } from 'rxjs';
 export class Skills {
   data$ = new BehaviorSubject<{
     language: string;
+    skills: any[]
   }>({
     language: 'en',
+    skills: []
   });
 
   get data() {
@@ -25,6 +27,12 @@ export class Skills {
 
   @Input() set language(language: string) {
     if (!language) return;
-    this.data = { language };
+    this.data = { language, skills: this.skills };
   }
+
+  skills = [
+    {icon:'',
+      label:''
+    }
+  ]
 }

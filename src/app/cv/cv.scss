@@ -1,23 +1,97 @@
 :host {
-  width: 210mm;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  background-color: var(--bg);
+  padding: 2rem;
 
-  main {
-    padding-left: 16mm;
-    padding-top: 8mm;
-    flex: 1;
+  info {
+    border-right: var(--border);
+    padding-right: 2rem;
+  }
+
+  .sections-nav {
+    padding: 0 2rem;
+
+    button {
+      cursor: pointer;
+    }
+  }
+
+  .sections-nav {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    button {
+      background: none;
+      border: none;
+      height: 3rem;
+      aspect-ratio: 1;
+      fill: var(--accent);
+      position: relative;
+
+      .tooltip {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50% 0;
+        font-family: sans-serif;
+        color: var(--text);
+        margin-top: 0;
+        opacity: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          height: 10px;
+          width: 100%;
+        }
+      }
+
+      &.active {
+        fill: var(--text);
+      }
+
+      &#btn-experience,
+      &#btn-projects {
+        padding: 3px;
+      }
+
+      &:hover {
+        fill: var(--text);
+        .tooltip {
+          display: block;
+          margin-top: 3px;
+          opacity: 1;
+          transition: 0.2s ease-in-out;
+        }
+      }
+    }
   }
 
-  .line {
-    position: absolute;
-    left: 8mm;
-    top: 10mm;
-    bottom: 10mm;
-    width: 1mm;
-    background-color: var(--complementary);
+  main {
+    overflow-y: auto;
+    padding-right: 2rem;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--accent);
+      // border-radius: 99px;
+
+      &:hover {
+        background-color: var(--text);
+      }
+    }
+
+    // .bottom-padding {
+    //   height: 80%;
+    // }
   }
 }

@@ -1,25 +1,38 @@
 <ng-container *ngIf="data$ | async as data">
-  <img class="profile-pic" src="assets/profile-pic.png" alt="" />
-  <div class="about flex-column-flex1">
-    <h1 class="pad100">{{data.info.name}}</h1>
-    <span class="birth">Romania - 1993</span>
-    <h2 class="pad100 mary100">
-      {{ data.language == "ro" ? "Despre" : "About"}}
-    </h2>
-    <p class="padx200">{{data.info.about}}</p>
+  <div class="profile-frame noshrink">
+    <div class="profile-bg">
+      <img src="assets/profile_pic_2025_tr.png" alt="profile picture" />
+    </div>
+  </div>
 
-    <h2 class="pad100 mary100">Contact</h2>
+  <div class="flex-column-flex1 gap50">
+    <h1 class="name">{{data.info.name}}</h1>
+    <h3 class="details">{{data.info.region}} | {{data.info.birthYear}}</h3>
 
-    <div class="contact-entries flex-column-gap100">
-      <a
-        [href]="l.link"
-        target="{{l.type !== 'phone' ? '_blank' : ''}}"
-        class="contact flex-aligned gap50"
-        *ngFor="let l of data.links"
-      >
-        <img src="{{'assets/' + l.icon}}" />
-        <span>{{l.label}}</span>
-      </a>
+    <ul class="flex-column gap50 mary150">
+      <li *ngFor="let contact of data.contactList">
+        <a
+          [href]="contact.link"
+          target="{{contact.type !== 'phone' ? '_blank' : ''}}"
+          class="contact flex-aligned gap50"
+        >
+          <span [svgIcon]="contact.icon"></span>
+          <span>{{contact.label}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex-column-gap100">
+    <button class="download-cv-btn flex-gap50 aligned-justified">
+      <span class="icon">download</span>
+      <span>Download CV</span>
+    </button>
+
+    <div class="languages flex-justified gap100">
+      <a routerLink="/en" routerLinkActive="active">EN</a>
+      <span>|</span>
+      <a routerLink="/ro" routerLinkActive="active">RO</a>
     </div>
   </div>
 </ng-container>

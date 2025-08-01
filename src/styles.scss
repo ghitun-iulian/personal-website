@@ -8,11 +8,6 @@
   min-width: 0;
 }
 
-html,
-body {
-  width: 100%;
-}
-
 @for $i from 0 through 10 {
   [class*="pad#{$i * 25}"] {
     padding: #{$i * 0.25}rem;
