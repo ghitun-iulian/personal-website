@@ -8,23 +8,4 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './languages.html',
   styleUrl: './languages.scss',
 })
-export class Languages {
-  data$ = new BehaviorSubject<{
-    language: string;
-  }>({
-    language: 'en',
-  });
-
-  get data() {
-    return this.data$.value;
-  }
-
-  set data(x: any) {
-    this.data$.next({ ...this.data, ...x });
-  }
-
-  @Input() set language(language: string) {
-    if (!language) return;
-    this.data = { language };
-  }
-}
+export class Languages {}

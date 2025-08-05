@@ -1,5 +1,7 @@
 :host {
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 
   info {
     border-right: var(--border);
@@ -69,8 +71,9 @@
 
   main {
     overflow-y: auto;
-    padding-right: 2rem;
     scroll-behavior: smooth;
+
+    padding-right: 2rem;
 
     &::-webkit-scrollbar {
       width: 6px;
@@ -83,8 +86,6 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: var(--accent);
-      // border-radius: 99px;
-
       &:hover {
         background-color: var(--text);
       }

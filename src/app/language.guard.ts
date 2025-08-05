@@ -1,11 +1,16 @@
 import { inject, Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, Router, UrlTree } from '@angular/router';
-import { LanguageService } from './services/language.service';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  Router,
+  UrlTree,
+} from '@angular/router';
+import { CvService } from './services/cv.service';
 
 @Injectable({ providedIn: 'root' })
 export class LanguageGuard implements CanActivate {
   private router = inject(Router);
-  private languageService = inject(LanguageService);
+  private languageService = inject(CvService);
 
   canActivate(route: ActivatedRouteSnapshot): boolean | UrlTree {
     const lang = route.params['lang'];

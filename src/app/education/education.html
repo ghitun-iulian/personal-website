@@ -1,57 +1,11 @@
-<ng-container *ngIf="data$ | async as data">
-  <div class="section-title">
-    {{data.language == 'ro' ? 'Educatie si formare' : 'Education and training'
-    }}
-  </div>
-  <div class="section-point">2014 - 2022</div>
-</ng-container>
+<div class="flex-column" *ngIf="data$ | async as data">
+  <div class="education" *ngFor="let education of data.education">
+    <h2 class="education-title padx100">{{education.title}}</h2>
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse possimus dolore,
-nihil natus at, magni doloribus sed ullam porro accusantium alias inventore
-illum laborum eum incidunt repellendus explicabo animi facilis officiis labore
-asperiores? Aliquid doloremque similique odit ipsum saepe debitis eum, magnam
-quaerat iure voluptates rem, ducimus obcaecati dolorem nostrum facere hic. Harum
-sit dolorum provident reprehenderit iste eveniet vel, quidem pariatur amet
-veritatis neque! Natus ipsam eos alias quae, repudiandae commodi odio sequi
-magnam aliquid praesentium illo aut labore quasi nostrum ipsa inventore
-laudantium nemo expedita quia, adipisci fugit eius. Corrupti deleniti nemo odit
-porro ab magni, aliquam esse labore modi eligendi facilis culpa nostrum aperiam
-earum officiis rem dignissimos error, impedit quibusdam quo quam in totam quod!
-Rerum nihil optio, architecto ut minima, animi delectus quod odio deleniti,
-fugiat obcaecati quo neque ipsam maiores necessitatibus dolore. Dolorum
-recusandae, odit hic id nulla quibusdam accusamus optio quaerat minus odio quam
-vel necessitatibus exercitationem voluptatum fuga quo dignissimos facere,
-quisquam magni repellat ex. Omnis aut unde fugit asperiores modi deleniti,
-quaerat temporibus recusandae iure minus cum sequi enim vitae hic incidunt
-magnam expedita. Tenetur unde sed, amet fugiat possimus voluptate, libero fugit
-hic totam dolores reprehenderit quod. Neque repudiandae impedit quos blanditiis,
-facilis dolore, eius distinctio laborum nostrum modi explicabo qui repellat id
-atque ut. Eius repellendus atque neque expedita incidunt itaque necessitatibus
-accusantium vero? Laboriosam quibusdam qui mollitia nisi vel accusantium eius
-harum, eos iste autem temporibus dolores fugiat provident consequatur, sit earum
-ducimus error! Deleniti enim sapiente error provident laborum, rerum quasi!
-Dolorem eligendi numquam sint praesentium, velit mollitia? Ex cupiditate commodi
-sint porro! Aut impedit ipsam tenetur tempore dolore reiciendis itaque, officia
-ut mollitia minima unde tempora ratione temporibus. Magni, temporibus quas!
-Itaque, placeat cum iste commodi temporibus perspiciatis odio obcaecati quaerat?
-Rerum doloribus veniam quibusdam at porro? Alias consectetur sequi expedita
-voluptatem mollitia est ipsam corporis beatae ullam aspernatur officia aliquid,
-veritatis maxime voluptatum voluptates rerum dolore ea quia? Adipisci, beatae
-deleniti nostrum quisquam aspernatur nesciunt dolores mollitia, odio vero iure
-sunt fugit eaque voluptatum. Obcaecati molestiae ex distinctio tempora sint
-ducimus quo incidunt expedita. Ea corrupti officiis voluptatem vero minima
-adipisci explicabo tenetur harum veniam. Ullam libero aperiam fuga! Aliquid,
-placeat nisi ut voluptatum molestiae perferendis. Vel dolorum fuga esse
-corrupti. Debitis vitae sint minima cupiditate sequi amet, id placeat iste
-incidunt, eligendi saepe vero magni sunt ab nostrum quasi dolorem illum
-blanditiis dolorum alias velit similique sed laborum. Iusto eum vero rerum sequi
-perspiciatis officiis nihil reprehenderit tenetur, delectus laudantium at optio
-voluptatem quam tempora placeat, dolores obcaecati ea. Cupiditate quasi
-voluptas, tempore, voluptatum voluptates soluta voluptatem dolore esse eius
-reiciendis velit quod neque aspernatur perspiciatis reprehenderit eos. Neque,
-doloremque ipsum at accusantium sit totam. Voluptates, vitae numquam rerum,
-nostrum magni necessitatibus quibusdam cumque quaerat ratione facere consectetur
-dicta at itaque animi quasi voluptatibus modi vel officiis impedit. Inventore
-nulla deserunt nam laudantium molestias obcaecati corrupti, a sit? Culpa
-perspiciatis illo, corrupti numquam architecto aliquam est velit, eligendi
-suscipit voluptas delectus ullam aliquid inventore.
+    <div class="education-info flex-gap100 padx100">
+      <h3 class="institution">{{education.institution}}</h3>
+      |
+      <h3 class="period">{{education.period}}</h3>
+    </div>
+  </div>
+</div>

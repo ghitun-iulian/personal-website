@@ -1,0 +1,38 @@
+[
+  {
+    "company": "Stardiag",
+    "location": "Cluj, Romania",
+    "period": "04.2023 - 07.2025",
+    "position": "Web application developer",
+    "description": "Helped develop a modular web application using Angular and Go, focused on providing a full, independent management service including atuhentication, realtime database and ACL.",
+    "skills": [
+      "Worked with PostgreSQL, writing queries, functions, and using features like JSONB, RLS, and full-text search.",
+      "Took part in backend API development, writing Go code to handle data and business logic.",
+      "Participated in planning and technical discussions related to architecture and app structure."
+    ]
+  },
+  {
+    "company": "ELECTROSERVICE ROZELOR",
+    "location": "Mangalia, Romania",
+    "period": "06.2021 - 12.2022",
+    "position": "Commercial graphic designer",
+    "description": "Managed a graphic design center, offering customers from the ospitality industry comercial solutions ranging from developing a brand identity to promotional products.",
+    "skills": [
+      "Maintained computer systems and production equipment.",
+      "Assisted customers in developing visual branding for their business.",
+      "Designed commercial materials, including: Flyers, Restaurant menus, Windowgraphics, Logos.",
+      "Operated various production equipment, such as: Laser cutter, Plotter cutter, Thermal transfer press"
+    ]
+  },
+  {
+    "company": "Auto electronics workshop",
+    "location": "Mangalia, Romania",
+    "period": "04.2014 - 04.2021",
+    "position": "Web application developer",
+    "description": "Worked as car electrician in a service center specializing on diagnosing and repairing complex electrical and electronic issues across a wide range of car brands.",
+    "skills": [
+      "Performed troubleshooting and system analysis to identify and resolve technical problems in vehicle electronics.",
+      "Used diagnostic equipment and interpreted wiring diagrams to detect faults in electrical and electronic systems."
+    ]
+  }
+]

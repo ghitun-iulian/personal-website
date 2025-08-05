@@ -1,38 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
+import { SvgDirective } from '../directives/svg.directive';
+import skills from './skills.json';
+
+export interface Skill {
+  label: string;
+  icon: string;
+  level: number;
+}
+
+export interface SkillCategory {
+  category: string;
+  skills: Skill[];
+}
 
 @Component({
   selector: 'skills',
-  imports: [CommonModule],
+  imports: [CommonModule, SvgDirective],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
+  host: { class: 'flex-column' },
 })
 export class Skills {
-  data$ = new BehaviorSubject<{
-    language: string;
-    skills: any[]
-  }>({
-    language: 'en',
-    skills: []
-  });
-
-  get data() {
-    return this.data$.value;
-  }
-
-  set data(x: any) {
-    this.data$.next({ ...this.data, ...x });
-  }
-
-  @Input() set language(language: string) {
-    if (!language) return;
-    this.data = { language, skills: this.skills };
-  }
-
-  skills = [
-    {icon:'',
-      label:''
-    }
-  ]
+  skillsData: SkillCategory[] = skills;
 }

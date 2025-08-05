@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 175 241" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,3529,-4134.71)">
+        <g id="firebase" transform="matrix(8.02383,0,0,8.02383,-3570.3,4126.65)">
+            <path d="M18.874,9.935L16.6,5.584C16.484,5.367 16.259,5.221 16,5.221C15.741,5.221 15.516,5.366 15.402,5.58L15.4,5.584L5.415,23.478L18.874,9.935ZM26.852,25.202L24.04,7.707C23.988,7.382 23.709,7.136 23.373,7.136C23.184,7.136 23.014,7.213 22.891,7.338L5.147,25.203L14.964,30.735C15.25,30.898 15.592,30.995 15.956,30.995C16.32,30.995 16.663,30.899 16.958,30.73L16.948,30.735L26.852,25.202ZM5.865,20.589L8.82,1.581C8.871,1.253 9.151,1.004 9.49,1.004C9.748,1.004 9.973,1.148 10.087,1.361L10.089,1.365L13.267,7.327L5.865,20.589Z" style="fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

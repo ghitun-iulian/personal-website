@@ -1,0 +1,86 @@
+:host {
+  gap: 2rem;
+
+  .skills {
+    flex-wrap: wrap;
+  }
+
+  .categ {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--primary);
+  }
+
+  .skill {
+    $height: 2.5rem;
+    $side: $height / sqrt(2);
+    $offset: calc($side / 2);
+
+    position: relative;
+    height: $height;
+    border-bottom: 4px solid var(--accent);
+    border-top: 4px solid var(--accent);
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: $side;
+      aspect-ratio: 1;
+      top: 50%;
+      right: -$offset;
+      transform: translateY(-50%) rotate(45deg);
+      border-right: 4px solid var(--accent);
+      border-top: 4px solid var(--accent);
+    }
+
+    .icon {
+      position: absolute;
+      background-color: var(--accent);
+      width: $side;
+      aspect-ratio: 1;
+      left: -$offset;
+      top: 50%;
+      translate: 0 -50%;
+      rotate: 45deg;
+      transition: 0.2s ease-in-out;
+    }
+
+    .svg {
+      position: absolute;
+      height: $side;
+      width: $side;
+      transition: 0.2s ease-in-out;
+      top: 0;
+      left: -1rem - $offset;
+      top: 50%;
+      translate: 0 -50%;
+      padding: 4px;
+
+      fill: var(--bg);
+    }
+
+    span {
+      font-family: axis;
+      color: var(--text);
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      border-bottom: 4px solid var(--text);
+      border-top: 4px solid var(--text);
+
+      &::after {
+        border-right: 4px solid var(--text);
+        border-top: 4px solid var(--text);
+      }
+
+      .icon {
+        scale: 1.5;
+        background-color: var(--text);
+      }
+      .svg {
+        scale: 1.5;
+      }
+    }
+  }
+}

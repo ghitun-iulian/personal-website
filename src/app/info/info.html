@@ -24,15 +24,24 @@
   </div>
 
   <div class="flex-column-gap100">
-    <button class="download-cv-btn flex-gap50 aligned-justified">
+    <a
+      target="_blank"
+      [href]="`assets/cv_${data.language}.pdf`"
+      [attr.download]="'CV_' + data.info.name + '_' + data.language + '.pdf'"
+      class="download-cv-btn flex-gap50 aligned-justified"
+    >
       <span class="icon">download</span>
-      <span>Download CV</span>
-    </button>
+      <span>{{data.language == 'ro' ? 'Descarca' : 'Download'}}</span>
+    </a>
 
     <div class="languages flex-justified gap100">
-      <a routerLink="/en" routerLinkActive="active">EN</a>
+      <a routerLink="/en" [fragment]="data.fragment" routerLinkActive="active"
+        >EN</a
+      >
       <span>|</span>
-      <a routerLink="/ro" routerLinkActive="active">RO</a>
+      <a routerLink="/ro" [fragment]="data.fragment" routerLinkActive="active"
+        >RO</a
+      >
     </div>
   </div>
 </ng-container>

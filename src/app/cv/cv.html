@@ -4,8 +4,7 @@
   <div class="sections-nav noshrink">
     <button
       *ngFor="let b of data.sections"
-      (click)="onSectionChange(b.id)"
-      [routerLink]="['/']"
+      [routerLink]="[`/${data.language}`]"
       [fragment]="b.id"
       [id]="'btn-' + b.id"
       [class.active]="data.activeSection == b.id"
@@ -19,7 +18,10 @@
 
   <main class="flex-column-flex1 gap200">
     <div *ngFor="let s of data.sections" class="noshrink section" [id]="s.id">
-      <ng-container *ngComponentOutlet="s.component"></ng-container>
+      <div class="title">
+        <h1>{{s.title}}</h1>
+      </div>
+      <ng-container *ngComponentOutlet="s.component"> </ng-container>
     </div>
   </main>
 </ng-content>

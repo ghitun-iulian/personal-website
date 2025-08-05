@@ -1,28 +1,49 @@
 :root {
-  // --primary: #723d46;
-  // --complementary: #472d30;
-  // --accent: #e26d5c;
-  // --text: #ffe1a8;
-
   --bg: #16151a;
   --primary: #424252;
   --complementary: #6488ca;
   --accent: #b9966d;
-  --text: #e6e2dc;
+  --text: #dad5cc;
+  --white: whitesmoke;
 
   --border: 6px solid var(--accent);
 }
 
 html {
   background-color: var(--bg);
+  background-image: url(assets/art_deco_pattern_1.svg);
+  background-size: 50px;
   color: var(--text);
   font-family: sans-serif;
   line-height: 1.3em;
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(22, 21, 26, 0.9) 0%,
+    rgba(22, 21, 26, 0.93) 20%,
+    rgba(22, 21, 26, 0.97) 30%,
+    rgba(22, 21, 26, 0.97) 70%,
+    rgba(22, 21, 26, 0.93) 81%,
+    rgba(22, 21, 26, 0.9) 100%
+  );
+  pointer-events: none;
 }
 
 @font-face {
   font-family: "axis";
-  src: url(./assets/Axis\ Extrabold.otf);
+  src: url(assets/Axis\ Extrabold.otf);
+}
+
+@font-face {
+  font-family: "quicksand";
+  src: url(assets/Quicksand-VariableFont_wght.ttf);
 }
 
 .svg {
@@ -33,4 +54,72 @@ html {
   svg {
     width: 100%;
   }
+}
+
+// h1.title {
+//   font-family: axis;
+//   font-size: 2rem;
+//   border-bottom: var(--border);
+//   padding-bottom: 1rem;
+//   margin-bottom: 1rem;
+// }
+
+h1.title {
+  font-family: axis;
+  color: var(--accent);
+  font-size: 2rem;
+  padding-left: 4rem;
+  // border-bottom: var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.title {
+  padding-left: 4rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  color: var(--white);
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 6px;
+    right: 0;
+    left: 1rem;
+    top: calc(50% - 3px);
+    background-color: var(--accent);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1.5rem;
+    background-color: var(--bg);
+    aspect-ratio: 1;
+    border: var(--border);
+    left: 0.5rem;
+    top: 50%;
+    translate: 0 -50%;
+    rotate: 45deg;
+  }
+
+  h1 {
+    position: absolute;
+    left: 2em;
+    top: 50%;
+    translate: 0 calc(-50% + -3px);
+    font-family: axis;
+    color: var(--accent);
+    font-size: 2rem;
+    background-color: var(--bg);
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  font-family: quicksand;
+  line-height: 1.6rem;
 }
