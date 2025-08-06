@@ -1,59 +1,34 @@
-# Cv
+# Online CV & Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+Welcome to my online CV, built with Angular 20. This project showcases my skills in modern frontend development, including component-based architecture, reactive programming with RxJS, and responsive design.
 
-## Development server
+You can view the live site here: [https://www.ghitun-iulian.ro](https://www.ghitun-iulian.ro)
 
-To start a local development server, run:
+Feel free to explore the source code to see how I've structured the application and implemented key features.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**Technologies used:**
 
-## Code scaffolding
+- Angular 20 with TypeScript  
+- RxJS for reactive data handling  
+- SCSS for styling  
+- GitHub Pages for hosting
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🚀 TODO / Roadmap
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [ ] Add fully responsive layout for mobile and tablet  
+- [ ] Add portofolio section
+- [ ] Improve accessibility (ARIA roles, keyboard navigation)  
+- [ ] Implement a dark/light mode toggle  
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 📬 Contact Me  
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- LinkedIn: [linkedin.com/in/ghitun-iulian](https://www.linkedin.com/in/ghitun-iulian)
+- Email: [ghitun.iulian.bogdan@gmail.com](mailto:ghitun.iulian.bogdan@gmail.com)
+- GitHub: [github.com/ghitun-iulian](https://github.com/ghitun-iulian)  
+- Phone: [+40748963385](tel:+40748963385)
