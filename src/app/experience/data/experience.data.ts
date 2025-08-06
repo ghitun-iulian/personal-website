@@ -1,4 +1,4 @@
-import { CvLanguage } from '../services/cv.service';
+import { CvLanguage } from '../../services/cv.service';
 import experiences_ro from './experiences_ro.json';
 import experiences_en from './experiences_en.json';
 

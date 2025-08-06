@@ -1,18 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SvgDirective } from '../directives/svg.directive';
-import skills from './skills.json';
-
-export interface Skill {
-  label: string;
-  icon: string;
-  level: number;
-}
-
-export interface SkillCategory {
-  category: string;
-  skills: Skill[];
-}
+import { CvService } from '../services/cv.service';
+import { combineLatest, map } from 'rxjs';
+import { skillsData } from './data/skills.data';
 
 @Component({
   selector: 'skills',
@@ -22,5 +13,13 @@ export interface SkillCategory {
   host: { class: 'flex-column' },
 })
 export class Skills {
-  skillsData: SkillCategory[] = skills;
+  private cvService = inject(CvService);
+
+  skills$ = this.cvService.language$.pipe(
+    map((language) => skillsData[language])
+  );
+
+  data$ = combineLatest({
+    skills: this.skills$,
+  });
 }

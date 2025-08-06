@@ -1,14 +1,16 @@
-<div *ngFor="let categ of skillsData">
-  <h2 class="categ">{{categ.category}}</h2>
+<ng-container *ngIf="data$ | async as data">
+  <div *ngFor="let categ of data.skills">
+    <h2 class="categ">{{categ.category}}</h2>
 
-  <div class="skills flex-row padx100 gap100">
-    <div
-      class="skill flex-aligned padx100 marx150 noshrink"
-      *ngFor="let skill of categ.skills"
-    >
-      <div class="icon"></div>
-      <span [svgIcon]="skill.icon"></span>
-      <span>{{skill.label}}</span>
+    <div class="skills flex-row padx100 gap100">
+      <div
+        class="skill flex-aligned padx100 marx150 noshrink"
+        *ngFor="let skill of categ.skills"
+      >
+        <div class="icon"></div>
+        <span [svgIcon]="skill.icon"></span>
+        <span>{{skill.label}}</span>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>

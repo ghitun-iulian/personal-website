@@ -1,0 +1,92 @@
+[
+  {
+    "category": "Frontend",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "angular",
+        "level": 0
+      },
+      {
+        "label": "Typescript",
+        "icon": "ts",
+        "level": 0
+      },
+      {
+        "label": "RxJs",
+        "icon": "rxjs",
+        "level": 0
+      },
+      {
+        "label": "HTML 5",
+        "icon": "html",
+        "level": 0
+      },
+      {
+        "label": "SCSS",
+        "icon": "scss",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "category": "Backend",
+    "skills": [
+      {
+        "label": "NodeJs",
+        "icon": "node",
+        "level": 0
+      },
+      {
+        "label": "Go",
+        "icon": "go",
+        "level": 0
+      },
+      {
+        "label": "REST APIs",
+        "icon": "api",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "category": "Baze de date",
+    "skills": [
+      {
+        "label": "PostgreSQL",
+        "icon": "postgres",
+        "level": 0
+      },
+      {
+        "label": "Firebase",
+        "icon": "firebase",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "category": "Altele",
+    "skills": [
+      {
+        "label": "UX | UI",
+        "icon": "ux",
+        "level": 0
+      },
+      {
+        "label": "Affinity",
+        "icon": "affinity",
+        "level": 0
+      },
+      {
+        "label": "Adobe",
+        "icon": "adobe",
+        "level": 0
+      },
+      {
+        "label": "Blender",
+        "icon": "blender",
+        "level": 0
+      }
+    ]
+  }
+]

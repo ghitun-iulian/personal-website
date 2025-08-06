@@ -1,12 +1,13 @@
 :host {
   gap: 2rem;
   .profile-frame {
-    width: 100%;
+    width: 90%;
     aspect-ratio: 1;
     border: var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 
     .profile-bg {
       width: 80%;
@@ -52,15 +53,14 @@
   ul li {
     list-style: none;
     a {
-      color: var(--text);
+      color: var(--white);
       text-decoration: none;
-      font-family: sans-serif;
-      font-size: 0.9rem;
+      font-family: quicksand;
 
       .svg {
-        width: 2rem;
+        width: 2.2rem;
         fill: var(--accent);
-        border: 2px solid var(--accent);
+        border: 3px solid var(--accent);
         border-radius: 50%;
         padding: 5px;
       }

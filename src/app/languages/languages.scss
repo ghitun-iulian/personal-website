@@ -1,0 +1,86 @@
+:host {
+  padding: 0 2.5rem;
+  gap: 1rem;
+
+  .language-card {
+    $height: 2.5rem;
+    $side: $height / sqrt(2);
+    $offset: calc($side / 2);
+
+    display: flex;
+    align-items: center;
+    height: $height;
+    border-bottom: 4px solid var(--accent);
+    border-top: 4px solid var(--accent);
+    position: relative;
+    font-size: 1.2rem;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: $side;
+      aspect-ratio: 1;
+      top: 50%;
+      translate: 0 -50%;
+      border-right: 4px solid var(--accent);
+      border-top: 4px solid var(--accent);
+    }
+
+    &::before {
+      left: -$offset;
+      rotate: 225deg;
+      background-color: var(--accent);
+    }
+
+    &::after {
+      right: -$offset;
+      rotate: 45deg;
+    }
+
+    .language {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      align-items: center;
+      background-color: var(--accent);
+      font-family: axis;
+      color: var(--bg);
+      padding: 0 2rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: $side;
+        aspect-ratio: 1;
+        top: 50%;
+        translate: 0 -50%;
+        border-right: 4px solid var(--accent);
+        border-top: 4px solid var(--accent);
+        right: -$offset;
+        rotate: 45deg;
+        background-color: var(--accent);
+      }
+    }
+
+    .level {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-family: quicksand;
+      color: var(--text);
+      flex: 3;
+      font-weight: bold;
+
+      span {
+        flex: 1;
+      }
+
+      span:first-child {
+        text-align: right;
+      }
+    }
+  }
+}

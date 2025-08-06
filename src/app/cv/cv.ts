@@ -5,7 +5,7 @@ import { combineLatest, map, Observable } from 'rxjs';
 import { SvgDirective } from '../directives/svg.directive';
 import { Info } from '../info/info';
 import { CvLanguage, CvService } from '../services/cv.service';
-import { CvSection, cvSections, Section } from './cv.data';
+import { CvSection, cvSections, Section } from './data/cv.data';
 
 @Component({
   selector: 'cv',

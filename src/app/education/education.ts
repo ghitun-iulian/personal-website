@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { BehaviorSubject, combineLatest, map } from 'rxjs';
 import { CvService } from '../services/cv.service';
-import { educationData } from './education.data';
+import { educationData } from './data/education.data';
 
 @Component({
   selector: 'education',

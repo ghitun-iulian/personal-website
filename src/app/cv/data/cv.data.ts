@@ -1,10 +1,10 @@
-import { About } from '../about/about';
-import { Education } from '../education/education';
-import { Experience } from '../experience/experience';
-import { Languages } from '../languages/languages';
-import { Projects } from '../projects/projects';
-import { CvLanguage } from '../services/cv.service';
-import { Skills } from '../skills/skills';
+import { About } from '../../about/about';
+import { Education } from '../../education/education';
+import { Experience } from '../../experience/experience';
+import { Languages } from '../../languages/languages';
+import { Projects } from '../../projects/projects';
+import { CvLanguage } from '../../services/cv.service';
+import { Skills } from '../../skills/skills';
 
 export interface Section {
   id: string;
@@ -59,11 +59,11 @@ export const cvSections: Section[] = [
     label: { ro: 'Limbi', en: 'Languages' },
     title: { ro: 'Limbi straine', en: 'Languages' },
   },
-  {
-    id: 'projects',
-    icon: 'folder',
-    component: Projects,
-    label: { ro: 'Proiecte', en: 'Projects' },
-    title: { ro: 'Proiecte', en: 'Projects' },
-  },
+  // {
+  //   id: 'projects',
+  //   icon: 'folder',
+  //   component: Projects,
+  //   label: { ro: 'Proiecte', en: 'Projects' },
+  //   title: { ro: 'Proiecte', en: 'Projects' },
+  // },
 ];

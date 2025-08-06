@@ -4,7 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { combineLatest, map, of } from 'rxjs';
 import { SvgDirective } from '../directives/svg.directive';
 import { CvService } from '../services/cv.service';
-import { contactLinks, infoData } from './info.data';
+import { contactLinks, infoData } from './data/info.data';
 
 @Component({
   selector: 'info',

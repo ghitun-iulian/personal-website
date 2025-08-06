@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { CvLanguage, CvService } from '../services/cv.service';
-import { aboutData } from './about.data';
+import { aboutData } from './data/about.data';
 import { combineLatest, map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 

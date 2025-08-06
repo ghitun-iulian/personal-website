@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, combineLatest, map, shareReplay, tap } from 'rxjs';
-import { cvSections } from '../cv/cv.data';
+import { cvSections } from '../cv/data/cv.data';
 
 export type CvLanguage = 'ro' | 'en';
 
