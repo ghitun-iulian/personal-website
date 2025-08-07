@@ -1,35 +1,45 @@
 :host {
   gap: 2rem;
-  .profile-frame {
-    width: 90%;
-    aspect-ratio: 1;
-    border: var(--border);
+  border-right: var(--border);
+  padding-right: 2rem;
+  .profile {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-
-    .profile-bg {
-      width: 80%;
+    flex-direction: column;
+    gap: 2rem;
+    .profile-pic {
+      width: 90%;
       aspect-ratio: 1;
-      background-color: var(--primary);
-      position: relative;
-      img {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
+      border: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+
+      .profile-bg {
+        width: 80%;
+        aspect-ratio: 1;
+        background-color: var(--primary);
+        position: relative;
+        img {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+        }
       }
     }
-  }
-  .name,
-  .details {
-    font-family: axis;
-    font-size: 1.5rem;
-    text-align: center;
-  }
 
-  .details {
-    font-size: 1rem;
+    .profile-info {
+      .name,
+      .details {
+        font-family: axis;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .details {
+        font-size: 1rem;
+      }
+    }
   }
 
   .download-cv-btn {
@@ -50,43 +60,33 @@
     }
   }
 
-  ul li {
-    list-style: none;
-    a {
-      color: var(--white);
-      text-decoration: none;
-      font-family: quicksand;
+  ul {
+    flex: 1;
+    li {
+      list-style: none;
+      flex-shrink: 0;
+      a {
+        color: var(--white);
+        text-decoration: none;
+        font-family: quicksand;
 
-      .svg {
-        width: 2.2rem;
-        fill: var(--accent);
-        border: 3px solid var(--accent);
-        border-radius: 50%;
-        padding: 5px;
-      }
-
-      &:hover {
-        text-decoration: underline;
         .svg {
-          fill: var(--text);
+          width: 2.2rem;
+          fill: var(--accent);
+          border: 3px solid var(--accent);
+          border-radius: 50%;
+          padding: 5px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          .svg {
+            fill: var(--text);
+          }
         }
       }
     }
   }
-
-  .languages {
-    a {
-      font-family: axis;
-      text-decoration: none;
-      color: var(--primary);
-
-      &:not(.active):hover {
-        color: var(--accent);
-      }
-
-      &.active {
-        color: var(--text);
-      }
-    }
-  }
 }
+
+@import "./info.media.scss";

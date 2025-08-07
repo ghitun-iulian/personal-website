@@ -22,7 +22,6 @@
   }
 
   .education-title {
-    // background-color: var(--primary);
     font-family: axis;
     white-space: pre-line;
     line-height: 2rem;
@@ -43,3 +42,5 @@
     }
   }
 }
+
+@import "./education.media.scss";

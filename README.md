@@ -10,25 +10,25 @@ Feel free to explore the source code to see how I've structured the application 
 
 **Technologies used:**
 
-- Angular 20 with TypeScript  
-- RxJS for reactive data handling  
-- SCSS for styling  
+- Angular 20 with TypeScript
+- RxJS for reactive data handling
+- SCSS for styling
 - GitHub Pages for hosting
 
 ---
 
 ## 🚀 TODO / Roadmap
 
-- [ ] Add fully responsive layout for mobile and tablet  
+- [x] Add fully responsive layout for mobile and tablet
 - [ ] Add portofolio section
-- [ ] Improve accessibility (ARIA roles, keyboard navigation)  
-- [ ] Implement a dark/light mode toggle  
+- [ ] Improve accessibility (ARIA roles, keyboard navigation)
+- [ ] Implement a dark/light mode toggle
 
 ---
 
-## 📬 Contact Me  
+## 📬 Contact Me
 
 - LinkedIn: [linkedin.com/in/ghitun-iulian](https://www.linkedin.com/in/ghitun-iulian)
 - Email: [ghitun.iulian.bogdan@gmail.com](mailto:ghitun.iulian.bogdan@gmail.com)
-- GitHub: [github.com/ghitun-iulian](https://github.com/ghitun-iulian)  
+- GitHub: [github.com/ghitun-iulian](https://github.com/ghitun-iulian)
 - Phone: [+40748963385](tel:+40748963385)

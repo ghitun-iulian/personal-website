@@ -9,6 +9,7 @@ import { educationData } from './data/education.data';
   imports: [CommonModule],
   templateUrl: './education.html',
   styleUrl: './education.scss',
+  host: { class: 'flex-column' },
 })
 export class Education {
   private cvService = inject(CvService);

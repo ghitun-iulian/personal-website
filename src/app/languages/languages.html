@@ -2,8 +2,8 @@
   <div class="language-card" *ngFor="let language of data.Languages">
     <div class="language">{{ language.language }}</div>
     <div class="level">
-      <span>{{ language.cefr }}</span>|
-      <span>{{ language.level }}</span>
+      <span class="hide-on-mobile">{{ language.cefr }}   | </span>
+      {{ language.level }}
     </div>
   </div>
 </ng-container>

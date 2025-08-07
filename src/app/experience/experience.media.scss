@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+  :host {
+    .experience-title,
+    .experience-info {
+      flex-direction: column;
+      gap: 0.5rem;
+      span {
+        display: none;
+      }
+    }
+
+    .description {
+      padding: 0;
+    }
+
+    ul {
+      padding: 1rem 0;
+      li {
+        padding-left: 2rem;
+        &::before {
+          left: 0.5rem;
+          height: 10px;
+        }
+      }
+    }
+  }
+}

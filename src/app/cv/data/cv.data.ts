@@ -28,7 +28,7 @@ export const cvSections: Section[] = [
     id: 'about',
     icon: 'person',
     component: About,
-    label: { ro: 'Despre mine', en: 'About me' },
+    label: { ro: 'Despre', en: 'About' },
     title: { ro: 'Despre mine', en: 'About me' },
   },
   {

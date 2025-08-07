@@ -1,7 +1,36 @@
 <ng-content *ngIf="data$ | async as data">
-  <info></info>
+  <div class="languages flex-justified gap100">
+    <a routerLink="/en" [fragment]="data.fragment" routerLinkActive="active"
+      >EN</a
+    >
+    <span>|</span>
+    <a routerLink="/ro" [fragment]="data.fragment" routerLinkActive="active"
+      >RO</a
+    >
+  </div>
 
-  <div class="sections-nav noshrink">
+  <info id="home"></info>
+
+  <div
+    class="menu-btn show-on-mobile"
+    [class.active]="data.menuOpen"
+    (click)="menuOpen = !data.menuOpen"
+  ></div>
+
+  <div class="sections-nav noshrink" [class.hidden]="!data.menuOpen">
+    <button
+      [routerLink]="[`/${data.language}`]"
+      fragment="home"
+      [id]="'btn-home'"
+      class="show-on-mobile"
+      [class.active]="data.activeSection == 'home'"
+    >
+      <span
+        [svgIcon]="'home' + (data.activeSection !== 'home' ? '_outline' : '')"
+      ></span>
+      <span class="tooltip">Home</span>
+    </button>
+
     <button
       *ngFor="let b of data.sections"
       [routerLink]="[`/${data.language}`]"

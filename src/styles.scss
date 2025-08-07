@@ -66,11 +66,29 @@ button.icon {
   display: none;
 }
 
+.show-on-mobile {
+  display: none;
+}
+
+.hide-on-mobile {
+  display: block;
+}
+
 @import url(./flex.scss);
 @import url(./theme.scss);
 
 @media print {
   .hide-on-print {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .show-on-mobile {
+    display: block;
+  }
+
+  .hide-on-mobile {
     display: none;
   }
 }
