@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { combineLatest, map } from 'rxjs';
-import { CvService } from '../services/cv.service';
-import { languagesData } from './data/languages.data';
+import { Component, inject, Input } from '@angular/core';
+import { BehaviorSubject, combineLatest, map } from 'rxjs';
+import { CvLanguages, CvService } from '../services/cv.service';
+import { LanguageItem, languagesData } from './data/languages.data';
 
 @Component({
   selector: 'languages',
@@ -12,12 +12,8 @@ import { languagesData } from './data/languages.data';
   host: { class: 'flex-column' },
 })
 export class Languages {
-  private cvService = inject(CvService);
-  languagesData$ = this.cvService.language$.pipe(
-    map((language) => languagesData[language])
-  );
-
-  data$ = combineLatest({
-    Languages: this.languagesData$,
-  });
+  @Input() set language(language: CvLanguages) {
+    this.languages$.next(languagesData[language]);
+  }
+  languages$ = new BehaviorSubject<LanguageItem[]>([]);
 }

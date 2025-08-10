@@ -1,25 +1,24 @@
-<div class="flex-column-gap200" *ngIf="data$ | async as data">
-  <div
-    class="experience flex-column"
-    *ngFor="let experience of data.experiences"
-  >
-    <div class="flex-spaced experience-title">
-      <h2 class="position">{{experience.position}}</h2>
-      <h2 class="period">{{experience.period}}</h2>
-    </div>
-
-    <div class="flex-gap100 experience-info">
-      <h3 class="company">{{experience.company}}</h3>
-      <span>|</span>
-      <h3 class="location">{{experience.location}}</h3>
-    </div>
-
-    <p class="description padx100">{{experience.description}}</p>
-
-    <ul class="flex-column-gap100 pad100">
-      <li *ngFor="let skill of experience.skills">
-        <p>{{skill}}</p>
-      </li>
-    </ul>
+@for(experience of experiences$ | async; track $index) {
+<div class="experience flex-column">
+  <div class="flex-spaced experience-title">
+    <h2 class="position">{{experience.position}}</h2>
+    <h2 class="period">{{experience.period}}</h2>
   </div>
+
+  <div class="flex-gap100 experience-info">
+    <h3 class="company">{{experience.company}}</h3>
+    <span>|</span>
+    <h3 class="location">{{experience.location}}</h3>
+  </div>
+
+  <p class="description padx100">{{experience.description}}</p>
+
+  <ul class="flex-column-gap100 pad100">
+    @for(skill of experience.skills; track $index) {
+    <li>
+      <p>{{skill}}</p>
+    </li>
+    }
+  </ul>
 </div>
+}

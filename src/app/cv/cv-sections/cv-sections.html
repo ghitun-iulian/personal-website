@@ -1,0 +1,25 @@
+@for(section of sections$ | async; track section.id){
+<div class="title" [id]="section.id">
+  <h1>{{ section.title }}</h1>
+</div>
+
+<div class="section">
+  <ng-template [ngTemplateOutlet]="section.template"></ng-template>
+</div>
+
+} @if( language$ | async; as language ) {
+<ng-template #about><about [language]="language"></about></ng-template>
+<ng-template #experience
+  ><experience [language]="language"></experience
+></ng-template>
+<ng-template #education
+  ><education [language]="language"></education
+></ng-template>
+<ng-template #skills><skills [language]="language"></skills></ng-template>
+<ng-template #languages
+  ><languages [language]="language"></languages
+></ng-template>
+
+<ng-template #projects><projects [language]="language"></projects></ng-template>
+{{sectionTemplates$.next({ about, experience, education, skills, languages,
+projects })}} }

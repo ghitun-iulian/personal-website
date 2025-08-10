@@ -1,11 +1,10 @@
-<div class="flex-column" *ngIf="data$ | async as data">
-  <div class="education" *ngFor="let education of data.education">
-    <h2 class="education-title padx100">{{education.title}}</h2>
-
-    <div class="education-info flex-gap100 padx100">
-      <h3 class="institution">{{education.institution}}</h3>
-      <span>|</span>
-      <h3 class="period">{{education.period}}</h3>
-    </div>
+@for(education of education$ | async; track $index) {
+<div class="education">
+  <h2 class="education-title">{{education.title}}</h2>
+  <div class="education-info">
+    <h3 class="institution">{{education.institution}}</h3>
+    <span class="divider">|</span>
+    <h3 class="period">{{education.period}}</h3>
   </div>
 </div>
+}

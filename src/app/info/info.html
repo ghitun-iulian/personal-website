@@ -1,36 +1,38 @@
-<ng-container *ngIf="data$ | async as data">
-  <div class="profile noshrink">
-    <div class="profile-pic">
-      <div class="profile-bg">
-        <img src="assets/profile_pic_2025_tr.png" alt="profile picture" />
-      </div>
-    </div>
-    <div class="profile-info flex-column gap100">
-      <h1 class="name">{{data.info.name}}</h1>
-      <h3 class="details">{{data.info.region}} | {{data.info.birthYear}}</h3>
+@if(data$ | async; as data){
+<div class="profile noshrink">
+  <div class="profile-pic">
+    <div class="profile-bg">
+      <img src="assets/profile_pic_2025_tr.png" alt="profile picture" />
     </div>
   </div>
+  <div class="profile-info flex-column gap100">
+    <h1 class="name">{{data.info.name}}</h1>
+    <h3 class="details">{{data.info.region}} | {{data.info.birthYear}}</h3>
+  </div>
+</div>
 
-  <ul class="flex-column gap50">
-    <li *ngFor="let contact of data.contactList">
-      <a
-        [href]="contact.link"
-        target="{{contact.type !== 'phone' ? '_blank' : ''}}"
-        class="contact flex-aligned gap50"
-      >
-        <span [svgIcon]="contact.icon"></span>
-        <span>{{contact.label}}</span>
-      </a>
-    </li>
-  </ul>
+<ul class="flex-column gap50">
+  @for(contact of data.contactList; track $index) {
+  <li>
+    <a
+      [href]="contact.link"
+      target="{{contact.type !== 'phone' ? '_blank' : ''}}"
+      class="contact flex-aligned gap50"
+    >
+      <span [svgIcon]="contact.icon"></span>
+      <span>{{contact.label}}</span>
+    </a>
+  </li>
+  }
+</ul>
 
-  <a
-    class="download-cv-btn flex-gap50 aligned-justified"
-    target="_blank"
-    [href]="`assets/cv_${data.language}.pdf`"
-    [attr.download]="'CV_' + data.info.name + '_' + data.language + '.pdf'"
-  >
-    <span class="icon">download</span>
-    <span>{{data.language == 'ro' ? 'Descarca' : 'Download'}} CV</span>
-  </a>
-</ng-container>
+<a
+  class="download-cv-btn flex-gap50 aligned-justified"
+  target="_blank"
+  [href]="`assets/cv_${data.language}.pdf`"
+  [attr.download]="'CV_' + data.info.name + '_' + data.language + '.pdf'"
+>
+  <span class="icon">download</span>
+  <span>{{data.language == 'ro' ? 'Descarca' : 'Download'}} CV</span>
+</a>
+}

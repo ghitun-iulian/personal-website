@@ -47,6 +47,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
+              "src/CNAME",
               {
                 "glob": "**/*",
                 "input": "public"

@@ -1,0 +1,31 @@
+@if (data$ | async; as data) {
+
+<div
+  class="nav-toggle"
+  [class.active]="data.menuOpen"
+  (click)="menuOpen = !data.menuOpen"
+></div>
+
+<div
+  class="nav-backdrop"
+  (click)="menuOpen = false"
+  [class.hidden]="!data.menuOpen"
+></div>
+
+<div class="nav" [class.hidden]="!data.menuOpen">
+  @for (item of data.navItems; track item.id) {
+  <a
+    [routerLink]="[`/${data.language}`]"
+    [fragment]="item.id"
+    [id]="'nav-item-' + item.id"
+    [class.active]="data.activeSection == item.id"
+    (click)="menuOpen = false"
+  >
+    <span
+      [svgIcon]="item.icon + (data.activeSection !== item.id ? '_outline' : '')"
+    ></span>
+    <span class="tooltip">{{ item.label }}</span>
+  </a>
+  }
+</div>
+}

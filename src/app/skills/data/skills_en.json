@@ -1,6 +1,6 @@
 [
   {
-    "category": "Frontend",
+    "label": "Frontend",
     "skills": [
       {
         "label": "Angular",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "category": "Backend",
+    "label": "Backend",
     "skills": [
       {
         "label": "NodeJs",
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "category": "Databases",
+    "label": "Databases",
     "skills": [
       {
         "label": "PostgreSQL",
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "category": "Others",
+    "label": "Others",
     "skills": [
       {
         "label": "UX | UI",

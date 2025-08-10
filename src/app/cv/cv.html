@@ -1,56 +1,9 @@
-<ng-content *ngIf="data$ | async as data">
-  <div class="languages flex-justified gap100">
-    <a routerLink="/en" [fragment]="data.fragment" routerLinkActive="active"
-      >EN</a
-    >
-    <span>|</span>
-    <a routerLink="/ro" [fragment]="data.fragment" routerLinkActive="active"
-      >RO</a
-    >
-  </div>
+<div class="languages flex-justified gap100">
+  <a routerLink="/en" routerLinkActive="active">EN</a>
+  <span>|</span>
+  <a routerLink="/ro" routerLinkActive="active">RO</a>
+</div>
 
-  <info id="home"></info>
-
-  <div
-    class="menu-btn show-on-mobile"
-    [class.active]="data.menuOpen"
-    (click)="menuOpen = !data.menuOpen"
-  ></div>
-
-  <div class="sections-nav noshrink" [class.hidden]="!data.menuOpen">
-    <button
-      [routerLink]="[`/${data.language}`]"
-      fragment="home"
-      [id]="'btn-home'"
-      class="show-on-mobile"
-      [class.active]="data.activeSection == 'home'"
-    >
-      <span
-        [svgIcon]="'home' + (data.activeSection !== 'home' ? '_outline' : '')"
-      ></span>
-      <span class="tooltip">Home</span>
-    </button>
-
-    <button
-      *ngFor="let b of data.sections"
-      [routerLink]="[`/${data.language}`]"
-      [fragment]="b.id"
-      [id]="'btn-' + b.id"
-      [class.active]="data.activeSection == b.id"
-    >
-      <span
-        [svgIcon]="b.icon + (data.activeSection !== b.id  ? '_outline' : '')"
-      ></span>
-      <span class="tooltip">{{b.label}}</span>
-    </button>
-  </div>
-
-  <main class="flex-column-flex1 gap200">
-    <div *ngFor="let s of data.sections" class="noshrink section" [id]="s.id">
-      <div class="title">
-        <h1>{{s.title}}</h1>
-      </div>
-      <ng-container *ngComponentOutlet="s.component"> </ng-container>
-    </div>
-  </main>
-</ng-content>
+<info id="home"></info>
+<cv-nav></cv-nav>
+<cv-sections class="flex1"></cv-sections>

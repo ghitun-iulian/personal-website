@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { combineLatest, map } from 'rxjs';
-import { CvService } from '../services/cv.service';
-import { experienceData } from './data/experience.data';
+import { Component, Input } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { CvLanguages } from '../services/cv.service';
+import { experienceData, ExperienceItem } from './data/experience.data';
 
 @Component({
   selector: 'experience',
@@ -11,13 +11,8 @@ import { experienceData } from './data/experience.data';
   styleUrl: './experience.scss',
 })
 export class Experience {
-  private cvService = inject(CvService);
-
-  experiences$ = this.cvService.language$.pipe(
-    map((lang) => experienceData[lang])
-  );
-
-  data$ = combineLatest({
-    experiences: this.experiences$,
-  });
+  @Input() set language(language: CvLanguages) {
+    this.experiences$.next(experienceData[language]);
+  }
+  experiences$ = new BehaviorSubject<ExperienceItem[]>([]);
 }

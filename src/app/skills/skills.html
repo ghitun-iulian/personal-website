@@ -1,16 +1,13 @@
-<ng-container *ngIf="data$ | async as data">
-  <div *ngFor="let categ of data.skills">
-    <h2 class="categ">{{categ.category}}</h2>
+@for(category of skills$ | async; track $index) {
+<h2 class="categ">{{category.label}}</h2>
 
-    <div class="skills flex-row padx100 gap100">
-      <div
-        class="skill flex-aligned padx100 marx150 noshrink"
-        *ngFor="let skill of categ.skills"
-      >
-        <div class="icon"></div>
-        <span [svgIcon]="skill.icon"></span>
-        <span class="label">{{skill.label}}</span>
-      </div>
-    </div>
+<div class="skills flex-row padx100 gap100">
+  @for(skill of category.skills; track $index) {
+  <div class="skill flex-aligned padx100 marx150 noshrink">
+    <div class="icon"></div>
+    <span [svgIcon]="skill.icon"></span>
+    <span class="label">{{skill.label}}</span>
   </div>
-</ng-container>
+  }
+</div>
+}

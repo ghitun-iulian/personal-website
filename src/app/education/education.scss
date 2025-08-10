@@ -2,7 +2,7 @@
   .education {
     position: relative;
     padding: 1rem 1.5rem;
-    padding-left: 2.5rem;
+    padding-left: 3rem;
 
     &::before {
       content: "";
@@ -10,7 +10,7 @@
       height: 12px;
       aspect-ratio: 1;
       background-color: var(--accent);
-      left: 1.5rem;
+      left: 1rem;
       top: 50%;
       translate: 0 -50%;
       rotate: 45deg;
@@ -28,6 +28,8 @@
   }
 
   .education-info {
+    display: flex;
+    gap: 1rem;
     .institution,
     .period {
       font-family: Arial, Helvetica, sans-serif;

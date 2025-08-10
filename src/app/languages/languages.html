@@ -1,9 +1,9 @@
-<ng-container *ngIf="data$ | async as data">
-  <div class="language-card" *ngFor="let language of data.Languages">
-    <div class="language">{{ language.language }}</div>
-    <div class="level">
-      <span class="hide-on-mobile">{{ language.cefr }}   | </span>
-      {{ language.level }}
-    </div>
+@for(language of languages$ | async; track $index) {
+<div class="language-card">
+  <div class="language">{{ language.language }}</div>
+  <div class="level">
+    <span class="hide-on-mobile">{{ language.cefr }}  |</span>
+      {{ language.level }}
   </div>
-</ng-container>
+</div>
+}

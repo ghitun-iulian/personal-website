@@ -1,16 +1,26 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject, combineLatest, map, shareReplay, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  combineLatest,
+  filter,
+  map,
+  shareReplay,
+  tap,
+} from 'rxjs';
 import { cvSections } from '../cv/data/cv.data';
 
-export type CvLanguage = 'ro' | 'en';
+export enum CvLanguages {
+  RO = 'ro',
+  EN = 'en',
+}
 
 @Injectable({ providedIn: 'root' })
 export class CvService {
   private route = inject(ActivatedRoute);
 
-  language$ = new BehaviorSubject<CvLanguage>('en');
-  set language(lang: CvLanguage) {
+  language$ = new BehaviorSubject<CvLanguages>(CvLanguages.EN);
+  set language(lang: CvLanguages) {
     this.language$.next(lang);
   }
 
